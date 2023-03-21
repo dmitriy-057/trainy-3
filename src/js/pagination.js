@@ -1,3 +1,4 @@
+import '../css/common.css';
 import NewsApiService from "./news-service";
 
 const refs = {
@@ -5,44 +6,26 @@ const refs = {
     articlesList: document.querySelector(".pg-articles"),
     loadMoreBtn: document.querySelector('[data-action="load-more"]')
 };
-
-const NewsApiService = new NewsApiService()
+// создал экземпляр класса для того, что бы получить обьект с методами и свойствами класса
+const newsApiService = new NewsApiService();
+console.log('newsApiService', newsApiService)
 
 refs.searchForm.addEventListener("submit", onSearch);
 refs.loadMoreBtn.addEventListener("click", onLoadMore)
 
-let searchData = '';
 
 function onSearch(e) {
     e.preventDefault();
 
 // получаем значение с инпута
-    searchData = e.currentTarget.elements.query.value;
-    console.log('Data input', searchData);
-
-    const options = {
-        headers: {
-            Authorization: '4330ebfabc654a6992c2aa792f3173a3'
-        }
-    }
-    const url = `https://newsapi.org/v2/everything?q=${searchData}&pageSize=10&page=1`;
-
-    fetch(url, options)
-    .then(r => r.json())
-    .then(console.log)
+    newsApiService.data = e.currentTarget.elements.query.value;
+    console.log('Data input', newsApiService.data);
+    
+    newsApiService.fetchArticles()
 
     refs.searchForm.reset();
 }
 
 function onLoadMore() {
-    const options = {
-        headers: {
-            Authorization: '4330ebfabc654a6992c2aa792f3173a3'
-        }
-    }
-    const url = `https://newsapi.org/v2/everything?q=${searchData}&pageSize=10&page=1`;
-
-    fetch(url, options)
-    .then(r => r.json())
-    .then(console.log)
+    newsApiService.fetchArticles()
 }

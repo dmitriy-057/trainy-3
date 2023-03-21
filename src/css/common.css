@@ -10,9 +10,48 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  text-align: center;
 }
 
 img {
   display: block;
   max-width: 100%;
+}
+
+.search-form-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-input {
+  display: flex;
+  margin-right: 20px;
+  padding: 5px;
+}
+.btn-primary {
+  width: 100px;
+  color: white;
+  background-color: rgba(37, 55, 249, 0.922);
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+}
+
+.btn-load-more {
+  display: inline-block;
+  width: 100px;
+  color: white;
+  background-color: rgba(37, 55, 249, 0.922);
+  border-radius: 4px;
+  border: none;
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pg-articles { 
+  display: flex;
+  justify-content: center;
 }
