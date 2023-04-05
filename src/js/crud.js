@@ -5,7 +5,7 @@ const postToAdd = {
     body: "CRUD is awesome",
   };
 
-  const optionsToCreate = {
+const optionsToCreate = {
     method: "POST",
     body: JSON.stringify(postToAdd),
     headers: {
@@ -44,3 +44,4 @@ fetch("https://jsonplaceholder.typicode.com/posts/3", optionsToDelete)
 .then(r => r.json())
 .then(posts => console.log(posts))
 .catch(e => console.log(e))
+
