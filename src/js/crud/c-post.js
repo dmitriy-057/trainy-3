@@ -17,7 +17,9 @@ addPost({
     "body": " Test content",
     "title": "JS",
     "rating": 10,
-}).then(renderBook)
+})
+.then(renderBook)
+.catch(error => console.log(error));
 
 addPost({
     "body": " Test content",

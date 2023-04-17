@@ -8,5 +8,5 @@ function removePost(postId) {
     }
     return fetch(url,options).then(res=>res.json()).then(console.log)
 }
-removePost(3)
-removePost(4)
+// removePost(3)
+// removePost(4)
